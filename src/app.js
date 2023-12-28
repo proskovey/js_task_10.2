@@ -1,12 +1,11 @@
-import json from './parser';
-import read from './reader';
+import GameSavingLoader from './GameSavingLoader';
 
-export default class GameSavingLoader {
-  static async load() {
-    try {
-      const reading = await read();
-      const parsing = await json(reading);
-      return parsing;
-    } catch { (error) => console.log(error); }
+(async () => {
+  try {
+    const saving = await GameSavingLoader.load();
+    const object = JSON.parse(saving);
+    Object.getPrototypeOf(object);
+  } catch (error) {
+    throw (new Error(error));
   }
-}
+})();
