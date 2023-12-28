@@ -1,6 +1,6 @@
 import GameSavingLoader from '../GameSavingLoader';
 
-test('тоже должно работать аналогично предыдущей задачи', async () => {
+test('должно работать аналогично', async () => {
   const expected = JSON.stringify({
     id: 9,
     created: 1546300800,
